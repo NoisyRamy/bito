@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Be My Valentine?</title>
+    <style>
+        body {
+            text-align: center;
+            background-color: #ffdde1;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            margin-top: 100px;
+        }
+        .message {
+            font-size: 24px;
+            margin: 20px;
+        }
+        .heart {
+            font-size: 50px;
+            animation: float 1.5s infinite alternate;
+        }
+        @keyframes float {
+            from { transform: translateY(0); }
+            to { transform: translateY(-10px); }
+        }
+        .buttons {
+            margin-top: 20px;
+        }
+        .btn {
+            padding: 10px 20px;
+            font-size: 18px;
+            border: none;
+            cursor: pointer;
+            margin: 10px;
+            border-radius: 10px;
+        }
+        .yes {
+            background-color: #ff4d6d;
+            color: white;
+        }
+        .no {
+            background-color: #555;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="heart">❤️</div>
+        <div class="message">Hey love, will you be my Valentine? 💕</div>
+        <div class="buttons">
+            <button class="btn yes" onclick="showLove()">Yes 💖</button>
+            <button class="btn no" onclick="moveButton(this)">No 😢</button>
+        </div>
+    </div>
+    
+    <script>
+        function showLove() {
+            document.body.innerHTML = '<h1 style="margin-top:100px;color:#ff4d6d;">Yay! I love you! ❤️💕</h1>';
+        }
+        
+        function moveButton(button) {
+            button.style.position = 'absolute';
+            button.style.left = Math.random() * window.innerWidth + 'px';
+            button.style.top = Math.random() * window.innerHeight + 'px';
+        }
+    </script>
+</body>
+</html>
